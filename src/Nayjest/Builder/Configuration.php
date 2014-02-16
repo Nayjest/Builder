@@ -7,7 +7,7 @@ class Configuration
 
     public function __construct(array $src)
     {
-        $this->src = $src;
+        $this->setRaw($src);
     }
 
     public function get($key, $default = null)
@@ -49,5 +49,10 @@ class Configuration
     public function getRaw()
     {
         return $this->src;
+    }
+
+    public function setRaw($src)
+    {
+        $this->src = $src;
     }
 } 

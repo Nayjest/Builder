@@ -31,6 +31,15 @@ class Blueprint implements BlueprintInterface
     public $defaults = [];
 
     /**
+     * Configuration options that will be used as constructor arguments
+     *
+     * @note Order of elements in this field corresponds to constructor arguments order
+     *
+     * @var string[]
+     */
+    public $asConstructorArguments = [];
+
+    /**
      * @var ClassUtils
      */
     protected $classUtils;
@@ -62,7 +71,12 @@ class Blueprint implements BlueprintInterface
      */
     protected function getConstructorArguments(ObjectConfiguration $src)
     {
-        return [];
+        # array_intersect_key is not used because order of fields in $this->constructorArguments is important
+        $arguments = [];
+        foreach ($this->asConstructorArguments as $argument) {
+            $arguments[] = $src->get($argument);
+        }
+        return $arguments;
     }
 
     public function __construct(ClassUtils $classUtils)
@@ -82,6 +96,13 @@ class Blueprint implements BlueprintInterface
             if ($config = $src->get($propName)) {
                 $src->set($propName, $artisan->make($config, $className));
             }
+        }
+    }
+
+    public function provideDefaultValues(ObjectConfiguration $src)
+    {
+        if (!empty($this->defaults))  {
+            $src->setRaw(array_merge($this->defaults, $src->getRaw()));
         }
     }
 
