@@ -8,6 +8,7 @@ namespace Nayjest\Builder;
  */
 class Blueprint implements BlueprintInterface
 {
+    const OPTION_CLASS = 'class';
     /**
      * Target class for ObjectBuilder
      *
@@ -49,7 +50,7 @@ class Blueprint implements BlueprintInterface
     public function instantiate(ObjectConfiguration $src)
     {
         return $this->classUtils->instantiate(
-            $src->getClass($this->class),
+            $src->getMeta(static::OPTION_CLASS, $this->class),
             $this->getConstructorArguments($src)
         );
     }

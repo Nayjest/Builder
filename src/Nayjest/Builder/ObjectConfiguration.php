@@ -6,14 +6,25 @@ class ObjectConfiguration extends Configuration
 {
     const OPTION_PREFIX = '@';
 
-    protected $class;
+    protected $metaOptions = [];
 
-    public function getClass($default = null)
+    public function getMeta($key, $default)
     {
-        if (!$this->class) {
-            $this->class = $this->extract(static::OPTION_PREFIX . 'class', $default);
+        if (isset($this->metaOptions[$key])) {
+            return $this->metaOptions[$key];
+        } else {
+            $val = $this->extract(static::OPTION_PREFIX . $key);
+            if ($val === null) {
+                return $default;
+            } else {
+                return $this->metaOptions[$key] = $val;
+            }
         }
-        return $this->class;
+    }
+
+    public function setMeta($key, $value)
+    {
+        $this->metaOptions[$key] = $value;
     }
 
 } 

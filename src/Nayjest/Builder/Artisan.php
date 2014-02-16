@@ -5,8 +5,6 @@ class Artisan
 {
     protected $registry;
 
-
-
     public function __construct(BlueprintRegistryInterface $registry)
     {
         $this->registry = $registry;
@@ -17,7 +15,7 @@ class Artisan
         if ($class) {
             $blueprint =$this->registry->get($class);
             $src = new ObjectConfiguration($blueprint->prepareRawConfig($rawConfig));
-            $src->set(ObjectConfiguration::OPTION_PREFIX . 'class', $class);
+            $src->setMeta($blueprint::OPTION_CLASS, $class);
         } else {
             $src = new ObjectConfiguration($rawConfig);
             $blueprint = $this->registry->get($src->getClass());
