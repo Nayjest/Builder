@@ -1,0 +1,14 @@
+{
+    "name": "nayjest/builder",
+    "description": "PHP package for instantiating objects using configurations",
+    "license": "The MIT License (MIT)",
+    "authors": [
+        {
+            "name": "Vitalii Stepanenko",
+            "email": "mail@vitaliy.in"
+        }
+    ],
+    "require": {
+
+    }
+}
