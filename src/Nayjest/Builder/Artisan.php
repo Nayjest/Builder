@@ -21,6 +21,7 @@ class Artisan
             $blueprint = $this->registry->get($src->getClass());
         }
 
+        $blueprint->provideDefaultValues($src);
         $instance  = $blueprint->instantiate($src);
         $blueprint->instantiateChildren($src, $this);
         $blueprint->assignPublicProperties($instance, $src);
