@@ -17,6 +17,7 @@ class Artisan
         if ($class) {
             $blueprint =$this->registry->get($class);
             $src = new ObjectConfiguration($blueprint->prepareRawConfig($rawConfig));
+            $src->set(ObjectConfiguration::OPTION_PREFIX . 'class', $class);
         } else {
             $src = new ObjectConfiguration($rawConfig);
             $blueprint = $this->registry->get($src->getClass());
