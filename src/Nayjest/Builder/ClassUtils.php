@@ -35,14 +35,15 @@ class ClassUtils
     }
 
     /**
+     * Assign values from only to existing class fields
      * @param object $instance
-     * @param array $properties
+     * @param array $fields
      * @return array names of assigned properties
      */
-    public function assignPublicProperties($instance, $properties)
+    public function assignPublicProperties($instance, $fields)
     {
         $existing = get_object_vars($instance);
-        $overwrite = array_intersect_key($properties, $existing);
+        $overwrite = array_intersect_key($fields, $existing);
         foreach ($overwrite as $key => $value) {
             $instance->{$key} = $value;
         }
