@@ -8,7 +8,7 @@ class ObjectConfiguration extends Configuration
 
     protected $metaOptions = [];
 
-    public function getMeta($key, $default)
+    public function getMeta($key, $default = null)
     {
         if (isset($this->metaOptions[$key])) {
             return $this->metaOptions[$key];
