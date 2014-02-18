@@ -21,6 +21,11 @@ class BlueptintRegistry implements BlueprintRegistryInterface
         return $this->defaultBluePrint;
     }
 
+    /**
+     * @param BlueprintInterface $blueprint
+     * @param bool $overwrite
+     * @throws \Exception
+     */
     public function register(BlueprintInterface $blueprint, $overwrite = false)
     {
         $className = $blueprint->getClass();
