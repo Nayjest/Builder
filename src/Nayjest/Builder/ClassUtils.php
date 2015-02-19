@@ -1,22 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nayjest
- * Date: 16.02.14
- * Time: 5:00
- */
-
 namespace Nayjest\Builder;
 
+use ReflectionClass;
 
 class ClassUtils
 {
     /**
+     * Creates class instance using specified constructor arguments
+     *
      * @param string $class
      * @param array $arguments
      * @return object
      */
-    public function instantiate($class, $arguments = [])
+    public static function instantiate($class, array $arguments = [])
     {
         switch (count($arguments)) {
             case 0:
@@ -24,23 +20,30 @@ class ClassUtils
             case 1:
                 return new $class(array_shift($arguments));
             case 2:
-                return new $class(array_shift($arguments), array_shift($arguments));
+                return new $class(
+                    array_shift($arguments),
+                    array_shift($arguments)
+                );
             case 3:
-                return new $class(array_shift($arguments), array_shift($arguments), array_shift($arguments));
+                return new $class(
+                    array_shift($arguments),
+                    array_shift($arguments),
+                    array_shift($arguments)
+                );
             default:
-                $reflection = new \ReflectionClass($class);
+                $reflection = new ReflectionClass($class);
                 return $reflection->newInstanceArgs($arguments);
         }
 
     }
 
     /**
-     * Assign values from only to existing class fields
+     * Assigns values from array to existing public properties
      * @param object $instance
      * @param array $fields
-     * @return array names of assigned properties
+     * @return string[] names of successfully assigned properties
      */
-    public function assignPublicProperties($instance, $fields)
+    public static function assignPublicProperties($instance, array $fields)
     {
         $existing = get_object_vars($instance);
         $overwrite = array_intersect_key($fields, $existing);
@@ -49,4 +52,42 @@ class ClassUtils
         }
         return array_keys($overwrite);
     }
-} 
+
+    /**
+     * Assigns values from array to corresponding properties using setters
+     *
+     * @param object $instance
+     * @param array $fields
+     * @return string[] names of successfully assigned properties
+     */
+    public static function assignBySetters($instance, array $fields)
+    {
+        $assigned_properties = [];
+        foreach($fields as $key => $value) {
+            $method_name = 'set' . str_replace(' ', '',ucwords(str_replace(array('-', '_'), ' ', $key)));
+            if (method_exists($instance, $method_name)) {
+                $instance->$method_name($value);
+                $assigned_properties[] = $key;
+            }
+        }
+        return $assigned_properties;
+    }
+
+    /**
+     * Assigns values from array to object
+     *
+     * @param object $instance
+     * @param array $fields
+     * @return string[] names of successfully assigned properties
+     */
+    public static function assign($instance, array $fields)
+    {
+        $assigned_properties = self::assignPublicProperties($instance, $fields);
+        $fields = array_diff_key($fields, array_flip($assigned_properties));
+        return array_merge(
+            $assigned_properties,
+            self::assignBySetters($instance, $fields)
+        );
+    }
+
+}
