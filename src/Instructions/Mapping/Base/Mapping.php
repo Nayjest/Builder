@@ -38,4 +38,34 @@ abstract class Mapping extends Instruction implements MappingInterface
             $this->applyInternal($this->default, $scaffold);
         }
     }
+
+    /**
+     * @param mixed $default
+     * @return $this
+     */
+    public function setDefault($default)
+    {
+        $this->default = $default;
+        return $this;
+    }
+
+    /**
+     * @param bool $is_exclusive
+     * @return $this
+     */
+    public function setExclusive($is_exclusive)
+    {
+        $this->is_exclusive = $is_exclusive;
+        return $this;
+    }
+
+    /**
+     * @param string $input_name
+     * @return $this
+     */
+    public function setInputName($input_name)
+    {
+        $this->input_name = $input_name;
+        return $this;
+    }
 }

@@ -5,6 +5,7 @@ namespace Nayjest\Builder\Test;
 use Nayjest\Builder\Blueprint;
 use Nayjest\Builder\Builder;
 use Nayjest\Builder\Instructions\Mapping\ConstructorArgument;
+use Nayjest\Builder\Instructions\Mapping\Rename;
 use Nayjest\Builder\Test\Mock\ConArgs;
 use Nayjest\Builder\Test\Mock\PersonStruct;
 use PHPUnit_Framework_TestCase;
@@ -19,7 +20,7 @@ class BuilderTest extends PHPUnit_Framework_TestCase
 
     }
 
-    public function testBuild()
+    public function testConstructorArguments()
     {
         $class = 'Nayjest\Builder\Test\Mock\ConArgs';
         $blueprint = new Blueprint($class, [
@@ -40,6 +41,20 @@ class BuilderTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('b!b', $inst->b);
         $this->assertEquals('c!c', $inst->c);
         $this->assertEquals('d!d', $inst->getD());
+    }
+
+    public function testRename()
+    {
+        $class = 'Nayjest\Builder\Test\Mock\PersonStruct';
+        $blueprint = new Blueprint($class, [
+            new Rename('years_old', 'age')
+        ]);
+        $builder = new Builder($blueprint);
+        /** @var PersonStruct $inst */
+        $inst = $builder->build([
+            'years_old' => 18
+        ]);
+        $this->assertEquals(18, $inst->age);
     }
 
     public function testDefaultBuild()

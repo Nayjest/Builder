@@ -21,4 +21,14 @@ abstract class Instruction implements InstructionInterface
     {
         return $this->phase;
     }
+
+    /**
+     * @param int $phase
+     * @return $this
+     */
+    public function setBuildPhase($phase)
+    {
+        $this->phase = $phase;
+        return $this;
+    }
 }
