@@ -5,6 +5,12 @@ class Mock
     public $name;
 }
 
+class Mock2
+{
+    public $name;
+    public $phone;
+}
+
 class ConstructorMock
 {
     public $field;
@@ -64,6 +70,7 @@ class Test extends PHPUnit_Framework_TestCase
         $this->assertEquals('Robert', $instance2->name);
 
     }
+
     public function test_constructor_arguments()
     {
         $this->facade->register([
@@ -77,6 +84,16 @@ class Test extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('value1', $instance1->field);
         $this->assertEquals('value2', $instance2->field);
+    }
+
+    public function test_class_source_priority()
+    {
+        $inst1 = $this->facade->make([], 'Mock');
+        $inst2 = $this->facade->make(['@class' => 'Mock2'], 'Mock');
+        $inst3 = $this->facade->make(['@class' => 'Mock']);
+        $this->assertEquals('Mock', get_class($inst1));
+        $this->assertEquals('Mock2', get_class($inst2));
+        $this->assertEquals('Mock', get_class($inst3));
     }
 
 } 
