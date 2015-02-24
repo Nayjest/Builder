@@ -1,5 +1,5 @@
 <?php
-namespace Nayjest\Builder\Mapping;
+namespace Nayjest\Builder\Instructions\Mapping;
 use Nayjest\Builder\Instructions\Base\Instruction;
 use Nayjest\Builder\Instructions\Mapping\Base\Mapping;
 use Nayjest\Builder\Scaffold;
