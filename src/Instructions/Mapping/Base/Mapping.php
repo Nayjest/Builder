@@ -9,7 +9,10 @@ abstract class Mapping extends Instruction implements MappingInterface
 
     protected $input_name;
 
+    /** @var bool Field will be removed from input true */
     protected $is_exclusive = true;
+
+    protected $default;
 
     public function isTargetInput($input_name)
     {
@@ -31,6 +34,8 @@ abstract class Mapping extends Instruction implements MappingInterface
             if ($this->is_exclusive) {
                 $scaffold->excludeInput($this->input_name);
             }
+        } elseif(null !== $this->default) {
+            $this->applyInternal($this->default, $scaffold);
         }
     }
 }

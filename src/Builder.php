@@ -8,6 +8,11 @@ class Builder
     /** @var Blueprint $blueprint */
     protected $blueprint;
 
+    public function __construct(Blueprint $blueprint)
+    {
+        $this->setBlueprint($blueprint);
+    }
+
     /**
      * @param array $input
      * @return mixed
@@ -22,19 +27,20 @@ class Builder
         $this->applyInstructions($scaffold, Instruction::PHASE_POST_INST);
         $this->assignProperties($scaffold);
         $this->applyInstructions($scaffold, Instruction::PHASE_FINAL);
-
+        return $scaffold->instance;
     }
 
     protected function applyInstructions(Scaffold $scaffold, $phase)
     {
         $instructions = $this->blueprint->getInstructions($phase);
-        foreach($instructions as $instruction) {
+        foreach ($instructions as $instruction) {
             $instruction->apply($scaffold);
         }
     }
 
     protected function makeInstance(Scaffold $scaffold)
     {
+
         $scaffold->instance = ClassUtils::instantiate(
             $scaffold->class,
             $scaffold->constructor_arguments

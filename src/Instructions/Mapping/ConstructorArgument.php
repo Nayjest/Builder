@@ -19,11 +19,13 @@ class ConstructorArgument extends Mapping
     protected $is_exclusive = true;
 
     /**
-     * @param $input_name
+     * @param string $input_name
+     * @param null $default
      */
-    public function __construct($input_name)
+    public function __construct($input_name, $default = null)
     {
         $this->input_name = $input_name;
+        $this->default = $default;
     }
 
     public function applyInternal($value, Scaffold $scaffold)

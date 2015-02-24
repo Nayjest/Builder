@@ -23,7 +23,7 @@ class Scaffold
 
     public function getInput($key)
     {
-        return $tmp =& $this->input[$key];
+        return isset($this->input[$key])?$this->input[$key]:null;
     }
 
 }
