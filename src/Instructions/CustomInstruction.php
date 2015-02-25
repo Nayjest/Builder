@@ -1,5 +1,5 @@
 <?php
-namespace Nayjest\Builder\Instructions\Mapping;
+namespace Nayjest\Builder\Instructions;
 
 use Closure;
 use Nayjest\Builder\Instructions\Base\Instruction;
