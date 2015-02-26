@@ -30,10 +30,10 @@ abstract class Mapping extends Instruction implements MappingInterface
     {
         $value = $scaffold->getInput($this->input_name);
         if (null !== $value) {
-            $this->applyInternal($value, $scaffold);
             if ($this->is_exclusive) {
                 $scaffold->excludeInput($this->input_name);
             }
+            $this->applyInternal($value, $scaffold);
         } elseif(null !== $this->default) {
             $this->applyInternal($this->default, $scaffold);
         }
