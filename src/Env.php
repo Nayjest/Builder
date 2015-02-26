@@ -9,6 +9,9 @@ class Env
     /** @var BlueprintsCollection */
     protected $blueprints;
 
+    /**
+     * @return self
+     */
     public static function instance()
     {
         if (null === static::$instance) {

@@ -1,7 +1,9 @@
 <?php
 namespace Nayjest\Builder;
 
+use Closure;
 use Nayjest\Builder\Instructions\Base\InstructionInterface;
+use Nayjest\Builder\Instructions\CustomInstruction;
 
 class Blueprint
 {
@@ -33,5 +35,18 @@ class Blueprint
             }
         }
         return $required;
+    }
+
+    /**
+     * @param InstructionInterface|Closure $i
+     * @return $this
+     */
+    public function add($i)
+    {
+        if ($i instanceof Closure) {
+            $i = new CustomInstruction($i);
+        }
+        $this->instructions[] = $i;
+        return $this;
     }
 }

@@ -10,6 +10,7 @@ class BlueprintsCollection
     public function add(Blueprint $blueprint)
     {
         $this->items[$blueprint->class] = $blueprint;
+        return $this;
     }
 
     /**
