@@ -14,10 +14,10 @@ class Builder
     }
 
     /**
-     * @param array $input
+     * @param array|mixed $input
      * @return mixed
      */
-    public function build(array $input)
+    public function build($input)
     {
         $scaffold = new Scaffold();
         $scaffold->class = $this->blueprint->class;
