@@ -9,7 +9,7 @@ class Env
     /** @var BlueprintsCollection */
     protected $blueprints;
 
-    public static function getInstance()
+    public static function instance()
     {
         if (null === static::$instance) {
             static::$instance = new self(new BlueprintsCollection());

@@ -7,7 +7,7 @@ class BlueprintsCollection
     /** @var Blueprint[] */
     protected $items;
 
-    public function addItem(Blueprint $blueprint)
+    public function add(Blueprint $blueprint)
     {
         $this->items[$blueprint->class] = $blueprint;
     }
