@@ -5,6 +5,13 @@ use Closure;
 use Nayjest\Builder\Instructions\Base\InstructionInterface;
 use Nayjest\Builder\Instructions\CustomInstruction;
 
+/**
+ * Class Blueprint
+ *
+ * Blueprints describes how to build objects of specified type.
+ *
+ * @package Nayjest\Builder
+ */
 class Blueprint
 {
     /** @var  string */
@@ -13,7 +20,7 @@ class Blueprint
     public $instructions = [];
 
     /**
-     * @param string $class
+     * @param string $class Target class name
      * @param InstructionInterface[] $instructions
      */
     public function __construct($class, array $instructions = [])
@@ -23,6 +30,8 @@ class Blueprint
     }
 
     /**
+     * Returns instructions for specified build phase
+     *
      * @param int $build_phase
      * @return InstructionInterface[]
      */
@@ -38,15 +47,17 @@ class Blueprint
     }
 
     /**
-     * @param InstructionInterface|Closure $i
+     * Adds instruction to blueprint
+     *
+     * @param InstructionInterface|Closure $instruction
      * @return $this
      */
-    public function add($i)
+    public function add($instruction)
     {
-        if ($i instanceof Closure) {
-            $i = new CustomInstruction($i);
+        if ($instruction instanceof Closure) {
+            $instruction = new CustomInstruction($instruction);
         }
-        $this->instructions[] = $i;
+        $this->instructions[] = $instruction;
         return $this;
     }
 }
