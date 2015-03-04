@@ -123,4 +123,4 @@ phpunit
 
 Licensed under the MIT License.
 
-Please see [License File](LICENSE.md) for more information.
+Please see [License File](LICENSE) for more information.
