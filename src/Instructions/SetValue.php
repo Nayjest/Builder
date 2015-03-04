@@ -25,7 +25,7 @@ class SetValue extends Instruction
 
     public function apply(Scaffold $scaffold)
     {
-        if (!$this->overwrite and $scaffold->getInput($this->input_name)) {
+        if (!$this->overwrite && $scaffold->getInput($this->input_name)) {
             return;
         }
         $scaffold->input[$this->input_name] = $this->value;

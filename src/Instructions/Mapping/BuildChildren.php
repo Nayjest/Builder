@@ -1,5 +1,6 @@
 <?php
 namespace Nayjest\Builder\Instructions\Mapping;
+
 use Nayjest\Builder\Blueprint;
 use Nayjest\Builder\Builder;
 use Nayjest\Builder\Instructions\Base\Instruction;
@@ -11,6 +12,9 @@ class BuildChildren extends Mapping
     protected $phase = Instruction::PHASE_PRE_INST;
 
     protected $is_exclusive = true;
+
+    /** @var Blueprint */
+    protected $blueprint;
 
     public function __construct($input_name, Blueprint $blueprint)
     {

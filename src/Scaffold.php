@@ -31,7 +31,7 @@ class Scaffold
     /**
      * Input data (build configuration)
      *
-     * @var array
+     * @var array|mixed
      */
     public $input = [];
 
