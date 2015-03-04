@@ -20,6 +20,8 @@ If you need to use nayjest/builder in environments with php <= 5.3, test it on y
 
 Via [Composer](https://getcomposer.org)
 
+Run following command:
+
 ```bash
 composer require nayjest/builder
 ```
@@ -45,8 +47,8 @@ It stores class name and set of build instructiuons.
 ```php
 use Nayjest\Builder\Blueprint;
 $blueprint = new Blueprint(
-  '\My\ExamplePackage\Person', # Constructed class name
-  []                         # Array of build instructions
+  '\My\ExamplePackage\Person',  # Constructed class name
+  []                            # Array of build instructions
 );
 ```
 
@@ -112,6 +114,8 @@ Applies user function to specified field.
 Renames specified field inside input configuration.
 
 ## 5. Testing
+
+Run following command:
 
 ```bash
 phpunit
