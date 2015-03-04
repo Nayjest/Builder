@@ -13,7 +13,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.*",
-        "mockery/mockery": "dev-master@dev"
+        "mockery/mockery": "dev-master@dev",
+        "codeclimate/php-test-reporter": "dev-master"
     },
     "autoload": {
         "psr-4": {
