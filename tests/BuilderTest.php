@@ -20,6 +20,18 @@ class BuilderTest extends PHPUnit_Framework_TestCase
 
     }
 
+    public function testSetGetBlueprint()
+    {
+        $class = 'Nayjest\Builder\Test\Mock\PersonStruct';
+        $blueprint1 = new Blueprint($class);
+        $blueprint2 = new Blueprint($class, [new Rename('years_old', 'age')]);
+        $builder = new Builder($blueprint1);
+        $this->assertEquals($blueprint1, $builder->getBlueprint());
+        $this->assertNotEquals($blueprint2, $builder->getBlueprint());
+        $builder->setBlueprint($blueprint2);
+        $this->assertEquals($blueprint2, $builder->getBlueprint());
+    }
+
     public function testConstructorArguments()
     {
         $class = 'Nayjest\Builder\Test\Mock\ConArgs';
