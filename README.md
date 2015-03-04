@@ -12,7 +12,9 @@ PHP package for instantiating objects using configurations
 
 * php 5.4+  
 
-This package is not tested with [outdated versions of PHP](http://php.net/supported-versions.php). If you need to use nayjest/builder in environments with php <= 5.3, test it on your own.
+This package is not tested with [outdated versions of PHP](http://php.net/supported-versions.php). 
+
+If you need to use nayjest/builder in environments with php <= 5.3, test it on your own.
 
 ## 2. Installation
 
