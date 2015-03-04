@@ -1,9 +1,15 @@
 <?php
 namespace Nayjest\Builder\Instructions\Base;
 
-
 use Nayjest\Builder\Scaffold;
 
+/**
+ * Class Instruction
+ *
+ * Base implementation of common things for build instructions.
+ *
+ * @package Nayjest\Builder\Instructions\Base
+ */
 abstract class Instruction implements InstructionInterface
 {
     const PHASE_PRE_INST = 0;
@@ -12,9 +18,16 @@ abstract class Instruction implements InstructionInterface
 
     protected $phase = self::PHASE_POST_INST;
 
+    /**
+     * Applies instruction.
+     *
+     * @param Scaffold $scaffold
+     */
     abstract public function apply(Scaffold $scaffold);
 
     /**
+     * Returns instruction build phase.
+     *
      * @return int
      */
     public function getBuildPhase()
@@ -23,6 +36,8 @@ abstract class Instruction implements InstructionInterface
     }
 
     /**
+     * Sets build phase for instruction.
+     *
      * @param int $phase
      * @return $this
      */

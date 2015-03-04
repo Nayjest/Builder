@@ -30,7 +30,7 @@ class Blueprint
     }
 
     /**
-     * Returns instructions for specified build phase
+     * Returns instructions for specified build phase.
      *
      * @param int $build_phase
      * @return InstructionInterface[]
@@ -47,7 +47,7 @@ class Blueprint
     }
 
     /**
-     * Adds instruction to blueprint
+     * Adds instruction to blueprint.
      *
      * @param InstructionInterface|Closure $instruction
      * @return $this

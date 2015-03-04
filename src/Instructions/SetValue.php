@@ -4,6 +4,11 @@ namespace Nayjest\Builder\Instructions;
 use Nayjest\Builder\Instructions\Base\Instruction;
 use Nayjest\Builder\Scaffold;
 
+/**
+ * Class SetValue
+ *
+ * @package Nayjest\Builder\Instructions
+ */
 class SetValue extends Instruction
 {
     protected $phase = Instruction::PHASE_PRE_INST;

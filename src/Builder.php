@@ -3,11 +3,22 @@ namespace Nayjest\Builder;
 
 use Nayjest\Builder\Instructions\Base\Instruction;
 
+/**
+ * Class Builder
+ *
+ * Instances of this class are responsible
+ * for building objects of certain type specified by blueprint.
+ *
+ * @package Nayjest\Builder
+ */
 class Builder
 {
     /** @var Blueprint $blueprint */
     protected $blueprint;
 
+    /**
+     * @param Blueprint $blueprint
+     */
     public function __construct(Blueprint $blueprint)
     {
         $this->setBlueprint($blueprint);
@@ -30,6 +41,13 @@ class Builder
         return $scaffold->instance;
     }
 
+    /**
+     * Applies to scaffold all build instructions
+     * that have specified build phase.
+     *
+     * @param Scaffold $scaffold
+     * @param int $phase
+     */
     protected function applyInstructions(Scaffold $scaffold, $phase)
     {
         $instructions = $this->blueprint->getInstructions($phase);
@@ -38,6 +56,11 @@ class Builder
         }
     }
 
+    /**
+     * Creates target class instance.
+     *
+     * @param Scaffold $scaffold
+     */
     protected function makeInstance(Scaffold $scaffold)
     {
 
@@ -47,6 +70,12 @@ class Builder
         );
     }
 
+    /**
+     * Assigns public properties
+     * and properties with setters to target class instance.
+     *
+     * @param Scaffold $scaffold
+     */
     protected function assignProperties(Scaffold $scaffold)
     {
         $scaffold->properties = array_merge(
@@ -60,7 +89,9 @@ class Builder
     }
 
     /**
-     * @return mixed
+     * Returns builder's blueprint.
+     *
+     * @return Blueprint
      */
     public function getBlueprint()
     {
@@ -68,7 +99,9 @@ class Builder
     }
 
     /**
-     * @param mixed $blueprint
+     * Sets blueprint to builder.
+     *
+     * @param Blueprint $blueprint
      */
     public function setBlueprint(Blueprint $blueprint)
     {

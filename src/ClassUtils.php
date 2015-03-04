@@ -3,10 +3,17 @@ namespace Nayjest\Builder;
 
 use ReflectionClass;
 
+/**
+ * Class ClassUtils
+ *
+ * Utilities for performing manipulations with classes and objects
+ *
+ * @package Nayjest\Builder
+ */
 class ClassUtils
 {
     /**
-     * Creates class instance using specified constructor arguments
+     * Creates class instance using specified constructor arguments.
      *
      * @param string $class
      * @param array $arguments
@@ -38,7 +45,8 @@ class ClassUtils
     }
 
     /**
-     * Assigns values from array to existing public properties
+     * Assigns values from array to existing public properties.
+     *
      * @param object $instance
      * @param array $fields
      * @return string[] names of successfully assigned properties
@@ -54,7 +62,7 @@ class ClassUtils
     }
 
     /**
-     * Assigns values from array to corresponding properties using setters
+     * Assigns values from array to corresponding properties using setters.
      *
      * @param object $instance
      * @param array $fields
@@ -74,7 +82,7 @@ class ClassUtils
     }
 
     /**
-     * Assigns values from array to object
+     * Assigns values from array to object.
      *
      * @param object $instance
      * @param array $fields
