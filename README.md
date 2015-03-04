@@ -117,7 +117,7 @@ Renames specified field inside input configuration.
 phpunit
 ```
 
-## License
+## 6. License
 
 © 2014 — 2015 Vitalii Stepanenko
 
