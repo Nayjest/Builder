@@ -2,7 +2,6 @@
 
 namespace Nayjest\Builder\Test;
 
-use Nayjest\Builder\BlueprintsCollection;
 use Nayjest\Builder\Env;
 use PHPUnit_Framework_TestCase;
 
