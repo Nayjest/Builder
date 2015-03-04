@@ -97,6 +97,9 @@ Applies user function to scaffold.
 #### `Nayjest\Builder\Instructions\SetValue` 
 Can be used to specify default values in build configuration or overwrite existing.
 
+#### `Nayjest\Builder\Instructions\Remove` 
+Removes value from input configuration if exists.
+
 #### `Nayjest\Builder\Instructions\Mapping\Build` 
 Replaces value by object builded using specified class blueprint.
 
