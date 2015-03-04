@@ -4,8 +4,6 @@ namespace Nayjest\Builder\Test;
 
 use Nayjest\Builder\Blueprint;
 use Nayjest\Builder\BlueprintsCollection;
-use Nayjest\Builder\ClassUtils;
-use Nayjest\Builder\Test\Mock\PersonStruct;
 use PHPUnit_Framework_TestCase;
 
 class BlueprintsCollectionTest extends PHPUnit_Framework_TestCase
