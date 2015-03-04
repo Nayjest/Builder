@@ -4,6 +4,8 @@ Builder
 PHP package for instantiating objects using configurations
 
 [![Codacy Badge](https://www.codacy.com/project/badge/4badc67af33446efac8258b8481912dd)](https://www.codacy.com/public/mail_2/Builder)
+[![Code Climate](https://codeclimate.com/github/Nayjest/Builder/badges/gpa.svg)](https://codeclimate.com/github/Nayjest/Builder)
+[![Test Coverage](https://codeclimate.com/github/Nayjest/Builder/badges/coverage.svg)](https://codeclimate.com/github/Nayjest/Builder)
 [![Build Status](https://travis-ci.org/Nayjest/Builder.svg?branch=master)](https://travis-ci.org/Nayjest/Builder)
 [![Latest Stable Version](https://poser.pugx.org/nayjest/builder/v/stable.svg)](https://packagist.org/packages/nayjest/builder)
 [![License](https://poser.pugx.org/nayjest/builder/license.svg)](https://packagist.org/packages/nayjest/builder)
