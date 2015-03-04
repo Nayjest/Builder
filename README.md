@@ -34,14 +34,14 @@ composer require nayjest/builder
 
 Building complex objects from configurations in architecturally beutiful way.
 
-### 3.2 Explanation
+#### 3.2 Explanation
 
 If you are confident with [builder design pattern](https://en.wikipedia.org/wiki/Builder_pattern),
 this package allows you to create builders for your classes in declarative style, based on build configuration.
 
-### 3.3 Usage
+#### 3.3 Usage
 
-#### 3.3.1 Class Blueprints
+##### 3.3.1 Class Blueprints
 
 When you need to build objects of some type, first of all, you will create blueprint for that type.
 In terminology of this package *blueprint* specifies *how to build object of some specified type*.
@@ -55,7 +55,7 @@ $blueprint = new Blueprint(
 );
 ```
 
-#### 3.3.2 Builders
+##### 3.3.2 Builders
 
 Next, you will instantiate a builder with previously created blueprint as constructor argument.
 In terminology of this package, *builder* is a instance of Nayjest\Builder\Builder class, initialized with a blueprint of constructed class. This object has public _build($input)_ method that accepts constructed class configurations, builds instance and returns it.
@@ -76,7 +76,7 @@ var_dump($john instanceof \My\ExamplePackage\Person); // result: true
 var_dump($john->getAge());  // result: 27
 ```
 
-#### 3.3.3 Scaffold and Instructions
+##### 3.3.3 Scaffold and Instructions
 
 During taget object building, builder creates temporary object, called *scaffold*.
 Scaffold contains all information needed to build object (input config, class name, constructor arguments, target instance when it's ready).
