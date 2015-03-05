@@ -64,7 +64,7 @@ class ClassUtils
     /**
      * Assigns values from array to corresponding properties using setters.
      *
-     * @param object $instance
+     * @param object|mixed $instance
      * @param array $fields
      * @return string[] names of successfully assigned properties
      */
