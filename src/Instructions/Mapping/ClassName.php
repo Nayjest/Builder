@@ -18,6 +18,7 @@ class ClassName extends Mapping
     {
         $this->input_name = $input_name;
     }
+
     public function applyInternal($value, Scaffold $scaffold)
     {
         $scaffold->class = $value;

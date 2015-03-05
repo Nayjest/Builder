@@ -34,7 +34,7 @@ abstract class Mapping extends Instruction implements MappingInterface
                 $scaffold->excludeInput($this->input_name);
             }
             $this->applyInternal($value, $scaffold);
-        } elseif(null !== $this->default) {
+        } elseif (null !== $this->default) {
             $this->applyInternal($this->default, $scaffold);
         }
     }
