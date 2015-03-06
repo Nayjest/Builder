@@ -9,6 +9,8 @@ PHP package for instantiating objects using configurations
 [![Code Coverage](https://scrutinizer-ci.com/g/Nayjest/Builder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Nayjest/Builder/?branch=master)
 [![Build Status](https://travis-ci.org/Nayjest/Builder.svg?branch=master)](https://travis-ci.org/Nayjest/Builder)
 [![Latest Stable Version](https://poser.pugx.org/nayjest/builder/v/stable.svg)](https://packagist.org/packages/nayjest/builder)
+[![Dependency Status](https://www.versioneye.com/user/projects/54f98b904f3108e7800000e7/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54f98b904f3108e7800000e7)
+
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/4ca474c2-d731-4cdf-ac93-9138f9f8907e/big.png)](https://insight.sensiolabs.com/projects/4ca474c2-d731-4cdf-ac93-9138f9f8907e)
 
 ## 1. Requirements
