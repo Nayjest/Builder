@@ -43,6 +43,16 @@ class Scaffold
     public $instance;
 
     /**
+     * @param string $class
+     * @param array|mixed $input
+     */
+    public function __construct($class = null, $input = [])
+    {
+        $this->class = $class;
+        $this->input = $input;
+    }
+
+    /**
      * Removes value from input (@see $this->input)
      *
      * @param string $field_name

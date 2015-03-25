@@ -30,9 +30,7 @@ class Builder
      */
     public function build($input)
     {
-        $scaffold = new Scaffold();
-        $scaffold->class = $this->blueprint->class;
-        $scaffold->input = $input;
+        $scaffold = new Scaffold($this->blueprint->class, $input);
         $this->applyInstructions($scaffold, Instruction::PHASE_PRE_INST);
         $this->makeInstance($scaffold);
         $this->applyInstructions($scaffold, Instruction::PHASE_POST_INST);
