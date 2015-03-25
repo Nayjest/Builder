@@ -15,6 +15,8 @@ use Nayjest\Builder\Scaffold;
  */
 class Remove extends Instruction
 {
+    protected $phase = self::PHASE_PRE_INST;
+
     /**
      * @var string field for removing
      */
