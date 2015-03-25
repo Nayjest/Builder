@@ -7,6 +7,10 @@ use Nayjest\Builder\Scaffold;
 /**
  * Class Remove
  *
+ * This class is a build instruction that can be used in class blueprints.
+ *
+ * Instruction removes specified field from input.
+ *
  * @package Nayjest\Builder\Instructions
  */
 class Remove extends Instruction

@@ -4,6 +4,9 @@ namespace Nayjest\Builder;
 /**
  * Class Env
  *
+ * Different environments may be used to resolve conflicts
+ * in builder setup.
+ *
  * @package Nayjest\Builder
  */
 class Env

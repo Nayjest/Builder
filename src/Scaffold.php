@@ -5,7 +5,7 @@ namespace Nayjest\Builder;
  * Class Scaffold
  *
  * Scaffold stores temporary data during object building process.
- * Build instructions interacts with Scaffold instance.
+ * Build instructions usually interacts with Scaffold instance.
  *
  * @package Nayjest\Builder
  */

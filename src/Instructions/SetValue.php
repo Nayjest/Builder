@@ -7,6 +7,12 @@ use Nayjest\Builder\Scaffold;
 /**
  * Class SetValue
  *
+ * This class is a build instruction that can be used in class blueprints.
+ *
+ * Instruction sets specified field value into input.
+ * May be used with $overwrite = false to provide default values
+ * or $overwrite = true to forced rewrite.
+ *
  * @package Nayjest\Builder\Instructions
  */
 class SetValue extends Instruction

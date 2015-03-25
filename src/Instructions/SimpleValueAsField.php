@@ -9,8 +9,8 @@ use Nayjest\Builder\Scaffold;
  *
  * This class is a build instruction that can be used in class blueprints.
  *
- * Instruction converts custom value passed to input
- * into input array with mentioned value in corresponding field.
+ * Instruction converts non-array value used as input
+ * into array containing mentioned value in corresponding field.
  *
  * Values that are instances of target class is ignored
  *

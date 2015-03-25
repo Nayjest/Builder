@@ -3,6 +3,13 @@ namespace Nayjest\Builder\Instructions\Base;
 
 use Nayjest\Builder\Scaffold;
 
+/**
+ * Interface InstructionInterface
+ *
+ * Interface of build instructions.
+ *
+ * @package Nayjest\Builder\Instructions\Base
+ */
 interface InstructionInterface
 {
     /**

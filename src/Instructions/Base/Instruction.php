@@ -6,7 +6,7 @@ use Nayjest\Builder\Scaffold;
 /**
  * Class Instruction
  *
- * Base implementation of common things for build instructions.
+ * Base class for build instructions.
  *
  * @package Nayjest\Builder\Instructions\Base
  */
