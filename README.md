@@ -23,7 +23,7 @@ If you need to use nayjest/builder in environments with php <= 5.3, test it on y
 
 ## 2. Installation
 
-Via [Composer](https://getcomposer.org)
+The recommended way of installing the component is through [Composer](https://getcomposer.org).
 
 Run following command:
 
