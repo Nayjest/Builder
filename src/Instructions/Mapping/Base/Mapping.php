@@ -13,7 +13,6 @@ use Nayjest\Builder\Scaffold;
  */
 abstract class Mapping extends Instruction implements MappingInterface
 {
-
     /**
      * @var string
      */

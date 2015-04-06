@@ -32,12 +32,12 @@ class SimpleValueAsField extends Instruction
 
     public function apply(Scaffold $scaffold)
     {
-        if (!is_array($value = $scaffold->input)) {
-            if (!is_object($value) && !is_a($value, $scaffold->class)) {
-                $scaffold->input = [
-                    $this->field_name => $value
-                ];
-            }
+        $value = $value = $scaffold->input;
+        if (!is_array($value) &&
+            !is_object($value) &&
+            !is_a($value, $scaffold->class)
+        ) {
+            $scaffold->input = [$this->field_name => $value];
         }
     }
 }

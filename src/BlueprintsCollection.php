@@ -11,7 +11,7 @@ namespace Nayjest\Builder;
 class BlueprintsCollection
 {
     /** @var Blueprint[] */
-    protected $items;
+    protected $items = [];
 
     /**
      * Adds blueprint to collection.
@@ -38,12 +38,13 @@ class BlueprintsCollection
     {
         if (isset($this->items[$class])) {
             return $this->items[$class];
-        } elseif(!$strict) {
-            foreach($this->items as $blueprint) {
+        } elseif (!$strict) {
+            foreach ($this->items as $blueprint) {
                 if (is_subclass_of($class, $blueprint->class, true)) {
                     return $blueprint;
                 }
             }
         }
+        return null;
     }
 }
