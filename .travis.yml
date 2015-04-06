@@ -3,10 +3,19 @@ php:
   - 5.4
   - 5.5
   - 5.6
+  - 7.0
   - hhvm
+  - hhvm-nightly
   - nightly
+matrix:
+  allow_failures:
+    - php: hhvm
+    - php: hhvm-nightly
+    - php: nightly
+before_install:
+  - composer self-update
 install:
-  - composer install
+  - travis_retry composer install --no-interaction
 addons:
   code_climate:
     repo_token: 948cc4a536070e41c89023af5fb6ef041a245e1d1e65db84ecca8ac93fa0c85f
