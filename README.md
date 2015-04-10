@@ -92,7 +92,7 @@ There is a set of predefined instructions, but you can create your own (the dirt
 
 Also, instantiating target object and setting public properties or properties that has _setters_ with corresponding names in camel case (i.e. setSomeAttribute($val) for 'some_attribute' input field) does not requires specific instruction in class blueprint, it's operations, performed by default.
 
-## 4. Instructions 
+## 4. Build Instructions 
 
 #### `Nayjest\Builder\Instructions\CustomInstruction` 
 Applies user function to scaffold.
