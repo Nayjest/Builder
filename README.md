@@ -1,7 +1,7 @@
 Builder
 =======
 
-PHP package for instantiating objects using configurations
+PHP package for constructing objects using configurations.
 
 [![Codacy Badge](https://www.codacy.com/project/badge/4badc67af33446efac8258b8481912dd)](https://www.codacy.com/public/mail_2/Builder)
 [![Code Climate](https://codeclimate.com/github/Nayjest/Builder/badges/gpa.svg)](https://codeclimate.com/github/Nayjest/Builder)
@@ -45,8 +45,8 @@ this package allows you to create builders for your classes in declarative style
 
 ##### 3.3.1 Class Blueprints
 
-When you need to build objects of some type, first of all, you will create blueprint for that type.
-In terminology of this package *blueprint* specifies *how to build object of some specified type*.
+When you need to construct objects of some type, first of all, you will create blueprint for that type.
+In terminology of this package *blueprint* specifies *how to construct object of some specified type*.
 It stores class name and set of build instructiuons.
 
 ```php
