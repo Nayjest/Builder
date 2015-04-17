@@ -19,6 +19,8 @@ class CustomMapping extends Mapping
     protected $function;
 
     /**
+     * Constructor.
+     *
      * @param string $input_name
      * @param \Closure $function arg1 = input value, arg2 = scaffold
      * @param mixed $default If input has no specified field but default option is not empty, user function will be called with default value
@@ -40,6 +42,9 @@ class CustomMapping extends Mapping
         $this->is_exclusive = $is_exclusive;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         call_user_func($this->function, $value, $scaffold);

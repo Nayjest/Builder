@@ -16,12 +16,21 @@ class BuildChildren extends Mapping
     /** @var Blueprint */
     protected $blueprint;
 
+    /**
+     * Constructor.
+     *
+     * @param string $input_name
+     * @param Blueprint $blueprint
+     */
     public function __construct($input_name, Blueprint $blueprint)
     {
         $this->input_name = $input_name;
         $this->blueprint = $blueprint;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         $builder = new Builder($this->blueprint);

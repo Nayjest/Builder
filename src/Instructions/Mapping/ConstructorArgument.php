@@ -19,6 +19,8 @@ class ConstructorArgument extends Mapping
     protected $is_exclusive = true;
 
     /**
+     * Constructor.
+     *
      * @param string $input_name
      * @param null $default
      */
@@ -28,6 +30,9 @@ class ConstructorArgument extends Mapping
         $this->default = $default;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         $scaffold->constructor_arguments[] = $value;

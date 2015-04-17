@@ -22,6 +22,13 @@ class SetValue extends Instruction
     protected $value;
     protected $overwrite;
 
+    /**
+     * Constructor.
+     *
+     * @param string $input_name
+     * @param mixed $value
+     * @param bool $overwrite
+     */
     public function __construct($input_name, $value, $overwrite = true)
     {
         $this->input_name = $input_name;
@@ -29,6 +36,9 @@ class SetValue extends Instruction
         $this->overwrite = $overwrite;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function apply(Scaffold $scaffold)
     {
         if (!$this->overwrite && $scaffold->getInput($this->input_name)) {

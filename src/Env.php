@@ -30,6 +30,8 @@ class Env
     }
 
     /**
+     * Constructor.
+     *
      * @param BlueprintsCollection $blueprints
      */
     public function __construct(BlueprintsCollection $blueprints)

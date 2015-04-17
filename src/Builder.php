@@ -25,6 +25,8 @@ class Builder
     }
 
     /**
+     * Builds class instance based on input configuration.
+     *
      * @param array|mixed $input
      * @return mixed
      */

@@ -43,6 +43,8 @@ class Scaffold
     public $instance;
 
     /**
+     * Constructor.
+     *
      * @param string $class
      * @param array|mixed $input
      */

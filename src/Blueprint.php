@@ -20,6 +20,8 @@ class Blueprint
     public $instructions = [];
 
     /**
+     * Constructor.
+     *
      * @param string $class Target class name
      * @param InstructionInterface[] $instructions
      */

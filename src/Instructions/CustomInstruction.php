@@ -19,6 +19,8 @@ class CustomInstruction extends Instruction
     protected $function;
 
     /**
+     * Constructor.
+     *
      * @param callable $function function to apply
      * @param int $phase
      */
@@ -28,6 +30,9 @@ class CustomInstruction extends Instruction
         $this->phase = $phase;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function apply(Scaffold $scaffold)
     {
         return call_user_func($this->function, $scaffold);

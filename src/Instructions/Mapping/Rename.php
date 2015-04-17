@@ -23,6 +23,8 @@ class Rename extends Mapping
     protected $new_name;
 
     /**
+     * Constructor.
+     *
      * @param string $oldName old field name
      * @param string $newName new field name
      */
@@ -32,6 +34,9 @@ class Rename extends Mapping
         $this->new_name = $newName;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         $scaffold->input[$this->new_name] = $value;

@@ -23,6 +23,8 @@ class SimpleValueAsField extends Instruction
     protected $field_name;
 
     /**
+     * Constructor.
+     *
      * @param string $field_name Field where value will be placed
      */
     public function __construct($field_name)
@@ -30,6 +32,9 @@ class SimpleValueAsField extends Instruction
         $this->field_name = $field_name;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function apply(Scaffold $scaffold)
     {
         $value = $value = $scaffold->input;

@@ -12,6 +12,8 @@ class ClassName extends Mapping
     protected $is_exclusive = true;
 
     /**
+     * Constructor.
+     *
      * @param $input_name
      */
     public function __construct($input_name)
@@ -19,6 +21,9 @@ class ClassName extends Mapping
         $this->input_name = $input_name;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         $scaffold->class = $value;

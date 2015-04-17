@@ -7,7 +7,7 @@ use Nayjest\Builder\Scaffold;
 /**
  * Class Mapping
  *
- * Base class for mapping build instructions
+ * Base class for mapping build instructions.
  *
  * @package Nayjest\Builder\Instructions\Mapping\Base
  */
@@ -27,7 +27,7 @@ abstract class Mapping extends Instruction implements MappingInterface
     protected $default;
 
     /**
-     * Returns true if mapping instruction is designed for specified field
+     * Returns true if mapping instruction is designed for specified field.
      *
      * @param string $input_name
      * @return bool
@@ -38,7 +38,8 @@ abstract class Mapping extends Instruction implements MappingInterface
     }
 
     /**
-     * If mapping is exclusive, processed value will be removed from input array.
+     * Returns true if mapping is exclusive.
+     * Exclusivity means that processed value will be removed from input array.
      *
      * @return bool
      */

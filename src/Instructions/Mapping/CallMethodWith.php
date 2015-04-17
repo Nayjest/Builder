@@ -24,6 +24,8 @@ class CallMethodWith extends Mapping
     protected $method;
 
     /**
+     * Constructor.
+     *
      * @param string $inputName
      * @param string $methodName
      */
@@ -33,6 +35,9 @@ class CallMethodWith extends Mapping
         $this->method = $methodName;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function applyInternal($value, Scaffold $scaffold)
     {
         call_user_func([$scaffold->instance, $this->method], $value);

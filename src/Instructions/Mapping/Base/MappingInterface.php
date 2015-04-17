@@ -13,13 +13,16 @@ use Nayjest\Builder\Instructions\Base\InstructionInterface;
 interface MappingInterface extends InstructionInterface
 {
     /**
+     * Returns true if mapping instruction is designed for specified field.
+     *
      * @param string $input_name
      * @return bool
      */
     public function isTargetInput($input_name);
 
     /**
-     * If mapping is exclusive, processed value will be removed from input array.
+     * Returns true if mapping is exclusive.
+     * Exclusivity means that processed value will be removed from input array.
      *
      * @return bool
      */

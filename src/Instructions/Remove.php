@@ -23,6 +23,8 @@ class Remove extends Instruction
     protected $input_name;
 
     /**
+     * Constructor.
+     *
      * @param string $input_name field for removing
      */
     public function __construct($input_name)
@@ -30,6 +32,9 @@ class Remove extends Instruction
         $this->input_name = $input_name;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function apply(Scaffold $scaffold)
     {
         if (array_key_exists($this->input_name, $scaffold->input)) {

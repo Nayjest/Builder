@@ -26,7 +26,7 @@ abstract class Instruction implements InstructionInterface
     abstract public function apply(Scaffold $scaffold);
 
     /**
-     * Returns instruction build phase.
+     * Returns build phase when instruction must be applied.
      *
      * @return int
      */

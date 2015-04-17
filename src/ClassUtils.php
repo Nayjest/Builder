@@ -6,7 +6,7 @@ use ReflectionClass;
 /**
  * Class ClassUtils
  *
- * Utilities for performing manipulations with classes and objects
+ * Utilities for performing manipulations with classes and objects.
  *
  * @package Nayjest\Builder
  */

@@ -13,14 +13,14 @@ use Nayjest\Builder\Scaffold;
 interface InstructionInterface
 {
     /**
-     * Applies instruction
+     * Applies instruction.
      *
      * @param Scaffold $scaffold
      */
     public function apply(Scaffold $scaffold);
 
     /**
-     * Returns build phase when instruction must be applied
+     * Returns build phase when instruction must be applied.
      *
      * @return int
      */
