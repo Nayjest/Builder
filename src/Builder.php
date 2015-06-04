@@ -2,6 +2,7 @@
 namespace Nayjest\Builder;
 
 use Nayjest\Builder\Instructions\Base\Instruction;
+use Nayjest\Manipulator\Manipulator;
 
 /**
  * Class Builder
@@ -64,7 +65,7 @@ class Builder
     protected function makeInstance(Scaffold $scaffold)
     {
 
-        $scaffold->instance = ClassUtils::instantiate(
+        $scaffold->instance = Manipulator::instantiate(
             $scaffold->class,
             $scaffold->constructor_arguments
         );
@@ -82,7 +83,7 @@ class Builder
             $scaffold->input,
             $scaffold->properties
         );
-        ClassUtils::assign(
+        Manipulator::assign(
             $scaffold->instance,
             $scaffold->properties
         );
